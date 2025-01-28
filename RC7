@@ -20,7 +20,7 @@ game.StarterGui:SetCore("SendNotification", {
 })
 local args = {
     [1] = "RolePlayBio",
-    [2] = "☑⚜سكربت المطور RC7 rweda⚜☑"
+    [2] = "☑⚜V2 سكربت المطور RC7 rweda⚜☑"
 }
  
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
