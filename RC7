@@ -59,12 +59,12 @@ MinimizeButton({
  
 local Main = MakeTab({Name = "المعلومات"})
 local Image = AddImageLabel(Main, {
-  Name = "TrollX HUB THE BEST",
+  Name = "RC7 HUB THE BEST",
   Image = "rbxassetid://94566638444350"
 })
 local Paragraph = AddParagraph(Main, {"سكربت عبارة عن مجموعة جبيرة بيها مميزات قوية", "bom dia meus manos"})
 AddButton(Main, {
-  Name = "انسخ حسابي ديسكورد",
+  Name = "انسخ سيرفري ديسكورد",
   Callback = function()
     setclipboard('https://discord.gg/SP3aHwez')
   end
@@ -72,13 +72,13 @@ AddButton(Main, {
 AddButton(Main, {
   Name = "انسخ يوزر قناتي تلي",
   Callback = function()
-    setclipboard('@SIPT_6')
+    setclipboard('https://t.me/SIPT_6')
   end
 })
 AddButton(Main, {
   Name = "انسخ يوزر قناتي يوت",
   Callback = function()
-    setclipboard('@RC7D1')
+    setclipboard('https://www.youtube.com/@RC7D1')
   end
 })
 local Main = MakeTab({Name = "الرؤوس الورجل"})
