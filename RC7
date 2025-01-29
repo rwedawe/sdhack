@@ -27,63 +27,65 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServ
 wait(0.1)
  
  
-loadstring(game:HttpGet(("https://qu.ax/RlPMk")))()
-MakeWindow({
-  Hub = {
-    Title = "RC7 rweda HUB",
-    Animation = "SCRIPT RC7 rweda Hub"
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/hacked-prototype/RedzLibV4/main/Source.lua"))()
+local AstroHubBrookHaven = loadstring(game:HttpGet("https://qu.ax/XgbDC.txt"))()
+local Window = Library:MakeWindow({
+  Title = "RC7 HUB : 1v",
+  SubTitle = "صنع بواسطة : rweda",
+  LoadText = "RC7 HUB",
+  Flags = "rweda"
+})
+
+--[[
+  Window:Set("New Title or Image")
+]]
+Window:AddMinimizeButton({
+  Button = {
+    -- Button Properties
+    Image = "rbxassetid://130341649860098"
   },
-  Key = {
-    KeySystem = false,
-    Title = "Key System",
-    Description = "",
-    KeyLink = "",
-    Keys = {"1234"},
-    Notifi = {
-      Notifications = true,
-      CorrectKey = "Running the Script...",
-      Incorrectkey = "The key is incorrect",
-      CopyKeyLink = "Copied to Clipboard"
-    }
-  }
+  UICorner = {true,
+    -- Corner Properties
+    CornerRadius = UDim.new(0.5, 0)
+  },
+  UIStroke = {false, {
+    -- Stroke Properties
+  }}
 })
+
+
+
+
  
-MinimizeButton({
-  Image = "rbxassetid://130341649860098",
-  Size = {40, 40},
-  Color = Color3.fromRGB(15, 15, 15),
-  Corner = true,
-  Stroke = true,
-  StrokeColor = Color3.fromRGB(240, 240, 240)
+local Info = Window:MakeTab({Name = "المعلومات", Icon = "rbxassetid://17781992617"})
+Info:AddLabel({"RC7 HUB THE BEST", "This is a Image Label", "rbxassetid://130341649860098"})
+
+Info:AddParagraph({"bom dia meus manos", "سكربت عبارة عن مجموعة جبيرة بيها مميزات قوية"})
+Info:AddSection({"سيرفير ديسكورد"})
+Info:AddDiscordInvite({
+  DiscordTitle = "RC7 HUB : Discord",
+  DiscordIcon = "rbxassetid://130341649860098",
+  DiscordLink = "https://discord.gg/SP3aHwez"
 })
- 
-local Main = MakeTab({Name = "المعلومات"})
-local Image = AddImageLabel(Main, {
-  Name = "RC7 HUB THE BEST",
-  Image = "rbxassetid://130341649860098"
+
+Info:AddSection({"قناتي تليگرام"})
+Info:AddDiscordInvite({
+  DiscordTitle = "RC7 HUB : Telegram",
+  DiscordIcon = "rbxassetid://130341649860098",
+  DiscordLink = "https://t.me/SIPT_6"
 })
-local Paragraph = AddParagraph(Main, {"سكربت عبارة عن مجموعة جبيرة بيها مميزات قوية", "bom dia meus manos"})
-AddButton(Main, {
-  Name = "انسخ سيرفري ديسكورد",
-  Callback = function()
-    setclipboard('https://discord.gg/SP3aHwez')
-  end
+
+
+Info:AddSection({"قناة يوتيوب"})
+Info:AddDiscordInvite({
+  DiscordTitle = "RC7 HUB : YouTube",
+  DiscordIcon = "rbxassetid://130341649860098",
+  DiscordLink = "https://www.youtube.com/@RC7D1"
 })
-AddButton(Main, {
-  Name = "انسخ يوزر قناتي تلي",
-  Callback = function()
-    setclipboard('https://t.me/SIPT_6')
-  end
-})
-AddButton(Main, {
-  Name = "انسخ يوزر قناتي يوت",
-  Callback = function()
-    setclipboard('https://www.youtube.com/@RC7D1')
-  end
-})
-local Main = MakeTab({Name = "الرؤوس الورجل"})
-local Paragraph = AddParagraph(Main, {"⚜الرؤوس ⚜", "bom dia meus manos"})
-AddButton(Main, {
+
+local Main = Window:MakeTab({Name = "الرؤوس الورجل", Icon = "rbxassetid://17781992617"})
+Main:AddSection({"⚜الرؤوس ⚜"})
+Main:AddButton({
   Name = "راس الروبوت او الدمية",
   Callback = function()
     print("Clicked")local args = {
@@ -102,7 +104,8 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
   end
 })
-AddButton(Main, {
+
+Main:AddButton({
   Name = "الراس المخفي",
   Callback = function()
     print("Clicked")local args = {
@@ -121,7 +124,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
   end
 })
-AddButton(Main, {
+Main:AddButton({
   Name = "رأس الكوبي",
   Callback = function()
     print("Clicked")local args = {
@@ -140,7 +143,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
   end
 })
-AddButton(Main, {
+Main:AddButton({
   Name = "رأس ووكر الموت",
   Callback = function()
     print("Clicked")local args = {
@@ -159,8 +162,9 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
   end
 })
-local Paragraph = AddParagraph(Main, {"⚜لارجل ⚜", "bom dia meus manos"})
-AddButton(Main, {
+Main:AddSection({"⚜لارجل ⚜"})
+
+Main:AddButton({
   Name = "رجل العظام السوداء",
   Callback = function()
     print("Clicked")local args = {
@@ -179,7 +183,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
   end
 })
-AddButton(Main, {
+Main:AddButton({
   Name = "رجل المقطوعه",
   Callback = function()
     print("Clicked")local args = {
@@ -198,7 +202,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
   end
 })
-AddButton(Main, {
+Main:AddButton({
   Name = "رجل العظام الرصاصي",
   Callback = function()
     print("Clicked")local args = {
@@ -217,7 +221,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
   end
 })
-AddButton(Main, {
+Main:AddButton({
   Name = "رجل الرول",
   Callback = function()
     print("Clicked")local args = {
@@ -236,10 +240,11 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):FireServer(unpack(args))
   end
 })
-local Main = MakeTab({Name = "⚜الاجسام⚜"})
-local Paragraph = AddParagraph(Main, {"قـائـمـة - اجسام - البنات "})
+local Bud = Window:MakeTab({Name = "⚜الاجسام⚜", Icon = "rbxassetid://97425580162440"})
+
+Bud:AddSection({"قـائـمـة - اجسام - البنات "})
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم البنت رقم 1 -",
   Callback = function()
 print("Clicked")local args = {
@@ -260,7 +265,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم البنت رقم 2 -",
   Callback = function()
 print("Clicked")local args = {
@@ -280,7 +285,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
  
   end
 })
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم البنت رقم 3 -",
   Callback = function()
 print("Clicked")local args = {
@@ -300,7 +305,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
  
   end
 })
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم البنت رقم 3  -",
   Callback = function()
 print("Clicked")local args = {
@@ -321,7 +326,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم البنت رقم 4",
   Callback = function()
 print("Clicked")local args = {
@@ -342,7 +347,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم البنت رقم 5 -",
   Callback = function()
 print("Clicked")local args = {
@@ -363,7 +368,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم البنت رقم 6 -",
   Callback = function()
 print("Clicked")local args = {
@@ -384,7 +389,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم البنت رقم 7 -",
   Callback = function()
 print("Clicked")local args = {
@@ -405,7 +410,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم البنت رقم 8-",
   Callback = function()
 print("Clicked")local args = {
@@ -426,9 +431,9 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-local Paragraph = AddParagraph(Main, {"⚜اجسام الولد⚜"})
+Bud:AddSection({"⚜اجسام الولد⚜"})
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم الولد رقم 1-",
   Callback = function()
 print("Clicked")local args = {
@@ -449,7 +454,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم الولد رقم 2 -",
   Callback = function()
 print("Clicked")local args = {
@@ -470,7 +475,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم الولد رقم 3-",
   Callback = function()
 print("Clicked")local args = {
@@ -492,7 +497,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
 })
  
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم الولد رقم 4-",
   Callback = function()
 print("Clicked")local args = {
@@ -513,7 +518,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم الولد رقم 5 -",
   Callback = function()
 print("Clicked")local args = {
@@ -534,9 +539,10 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-local Paragraph = AddParagraph(Main, {"_ اجسام جدا صغيرة _"})
+Bud:AddSection({"_ اجسام جدا صغيرة _"})
+
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم قزم -",
   Callback = function()
 print("Clicked")local args = {
@@ -556,7 +562,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
  
 end})
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم القزم متوسط  - ",
   Callback = function()
 print("Clicked")local args = {
@@ -577,7 +583,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم القزم صغير -",
   Callback = function()
 print("Clicked")local args = {
@@ -597,7 +603,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
  
   end
 })
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم القزم -",
   Callback = function()
 print("Clicked")local args = {
@@ -618,7 +624,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم قزم تنسيقي-",
   Callback = function()
 print("Clicked")local args = {
@@ -639,7 +645,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
   end
 })
  
-AddButton(Main, {
+Bud:AddButton({
   Name = "جسم الفأرة-",
   Callback = function()
 print("Clicked")local args = {
@@ -659,10 +665,11 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1Avata1rOrigina1l"):Fire
  
   end
 })
-local Main = MakeTab({Name = "⚜لسكن⚜"})
-local Paragraph = AddParagraph(Main, {"الدمج فقط للولد"})
-local Paragraph = AddParagraph(Main, {"دمج شعر اسود حطها و حط الباقي وياه"})
-AddButton(Main, {
+local skin = Window:MakeTab({Name = "⚜لسكن⚜", Icon = "rbxassetid://97425580162440"})
+
+skin:AddSection({"الدمج فقط للولد"})
+skin:AddSection({"دمج شعر اسود حطها و حط الباقي وياه"})
+skin:AddButton({
   Name = "الدمج الاسود حطها و حط الباقي",
   Callback = function()
     print("Clicked")local args = {
@@ -673,7 +680,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
   	end    
 })
-AddButton(Main, {
+skin:AddButton({
   Name = "تكملة دمج الاسود",
   Callback = function()
     print("Clicked")local args = {
@@ -684,7 +691,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
   	end    
 })
-AddButton(Main, {
+skin:AddButton({
   Name = "تكملة دمج الاسود",
   Callback = function()
     print("Clicked")local args = {
@@ -695,7 +702,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
   	end    
 })
-AddButton(Main, {
+skin:AddButton({
   Name = "تكملة دمج الاسود",
   Callback = function()
     print("Clicked")local args = {
@@ -706,8 +713,8 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
   	end    
 })
-local Paragraph = AddParagraph(Main, {"دمج الشعر البني"})
-AddButton(Main, {
+
+skin:AddButton({
   Name = "الدمج البني  حطها و حط الباقي",
   Callback = function()
     print("Clicked")local args = {
@@ -718,7 +725,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
   	end    
 })
-AddButton(Main, {
+skin:AddButton({
   Name = "تكملة الدمج",
   Callback = function()
     print("Clicked")local args = {
@@ -729,7 +736,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
   	end    
 })
-AddButton(Main, {
+skin:AddButton({
   Name = "تكملة الدمج",
   Callback = function()
     print("Clicked")local args = {
@@ -740,48 +747,15 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
   	end    
 })
-local Main = MakeTab({Name = "⚜التنقل⚜"})
-AddButton(Main, {
-  Name = "التنقل",
-  Callback = function()
-    mouse = game.Players.LocalPlayer:GetMouse() 
- 
-tool = Instance.new("Tool") 
- 
-tool.RequiresHandle = false 
- 
-tool.Name = "اداة التنقل" 
- 
-tool.Activated:connect(function() 
- 
-local pos = mouse.Hit+Vector3.new(0,2.5,0) 
- 
-pos = CFrame.new(pos.X,pos.Y,pos.Z) 
- 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos 
- 
-end) 
- 
-tool.Parent = game.Players.LocalPlayer.Backpack
-  end
-})
-local Slider = AddSlider(Main, {
-  Name = "مسافة التنقل",
-  MinValue = 10,
-  MaxValue = 50,
-  Default = 25,
-  Increase = 1,
-  Callback = function(Value)
- 
-  end
-})
- 
+local tp = Window:MakeTab({Name = "⚜التنقل⚜", Icon = "rbxassetid://128552568523521"})
+
+
 -- Function to teleport to Teleport
 local function teleportToCenter()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(136, 4, 117)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "امام البيوت",
     Description = "",
     Callback = teleportToCenter
@@ -792,7 +766,7 @@ local function teleportToCriminal()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-119, -28, 235)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "مكان الأسلحة",
     Description = "Teleporta para as coordenadas do Criminal",
     Callback = teleportToCriminal
@@ -803,7 +777,7 @@ local function teleportToHouseAbandoned()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(986, 4, 63)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "البيت المهجور",
     Description = "Teleporta para as coordenadas da Casa Abandonada",
     Callback = teleportToHouseAbandoned
@@ -814,7 +788,7 @@ local function teleportToPortalAgency()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(672, 4, -296)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "المكان السري",
     Description = "Teleporta para as coordenadas do Portal da Agência",
     Callback = teleportToPortalAgency
@@ -825,7 +799,7 @@ local function teleportToSecretLocation()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(505, -75, 143)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "اسفل الارض",
     Description = "Teleporta para as coordenadas do Local Secreto",
     Callback = teleportToSecretLocation
@@ -836,7 +810,7 @@ local function teleportToSchool()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-312, 4, 211)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "عند المدرسة",
     Description = "Teleporta para as coordenadas da Escola",
     Callback = teleportToSchool
@@ -847,7 +821,7 @@ local function teleportToBrooksDiner()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(161, 8, 52)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "عند الكوفي",
     Description = "Teleporta para as coordenadas do Brooks Diner",
     Callback = teleportToBrooksDiner
@@ -857,7 +831,7 @@ local function teleportToBrooksDiner()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-26, 4, -23)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "اللوبي",
     Description = "Teleporta para as coordenadas do Brooks Diner",
     Callback = teleportToBrooksDiner
@@ -869,7 +843,7 @@ local function teleportToHospital()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-309, 4, 71)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "عند المستشفى",
     Description = "Teleporta para as coordenadas do Hospital",
     Callback = teleportToHospital
@@ -879,7 +853,7 @@ local function teleportToSecretRoom2()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-343, 4, -613)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "اسفل الارض 2",
     Description = "Teleporta para as coordenadas da Sala Secreta 2",
     Callback = teleportToSecretRoom2
@@ -890,7 +864,7 @@ local function teleportToIsland1()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1925, 23, 127)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "عند الجزيرة",
     Description = "Teleporta para as coordenadas da Ilha 1",
     Callback = teleportToIsland1
@@ -901,7 +875,7 @@ local function teleportToAirport()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(310, 5, 31)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "عند المطار",
     Description = "Teleporta para as coordenadas do Aeroporto",
     Callback = teleportToAirport
@@ -912,7 +886,7 @@ local function teleportToArch()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-589, 141, -59)
 end
  
-AddButton(Main, {
+tp:AddButton({
     Name = "فوق الجسر",
     Description = "Teleporta para as coordenadas do Arco",
     Callback = teleportToArch
@@ -923,14 +897,15 @@ local function teleportToAgency()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(179, 4, -464)
 end
  
-AddButton(Main, {
+tp:AddButton({
  
 Name = "مكان المودلة",
     Description = "Teleporta para as coordenadas da Agência",
     Callback = teleportToAgency
 })
-local Main = MakeTab({Name = "⚜️السكربتات⚜️"})
-AddButton(Main, {
+local Sc = Window:MakeTab({Name = "⚜️السكربتات⚜️", Icon = "rbxassetid://10734930886"})
+
+Sc:AddButton({
   Name = "سكربت ازاله الملابس",
   Callback = function()
    local player = game.Players.LocalPlayer -- تحديد اللاعب
@@ -948,98 +923,99 @@ end
 
   end
 })
-AddButton(Main, {
+Sc:AddButton({
   Name = "سكربت الجودة",
   Callback = function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Rtx-graphics-25102"))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = "سكربت الرقصات المجانية",
   Callback = function()
     loadstring(game:HttpGet("https://scriptblox.com/raw/Baseplate-Fe-All-Emote-7386"))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = "المشيات",
   Callback = function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-AFEM-14048"))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = "سكربت نسخ سكنات",
   Callback = function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-rochips-universal-18294"))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = "سكربت الهلال رحمه",
   Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/n0kc/AtomicHub/main/Map-Al-Biout.lua"))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = "سكربت الاختفاء",
   Callback = function()
     loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = " سكربت يطير الناس بالكنبة",
   Callback = function()
     loadstring(game:HttpGet('https://pastebin.com/raw/TXMNj1yy'))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = " سكربت طيران  ",
   Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/AshleyCanis/-/main/%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%B5%D9%86%D8%B9%20%D8%A2%D8%B4%D9%84%D9%8A%20%D9%83%D8%A7%D9%86%D9%8A%D8%B3"))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = " سكربت الاغاني",
   Callback = function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/M1ZZ001/BrookhavenR4D/main/Brookhaven%20R4D%20Script'))()
   end
 })
-AddButton(Main, {
+Sc:AddButton({
   Name = " سكربت سرعه السيارة",
   Callback = function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/M1ZZ001/BrookhavenR4D/main/Brookhaven%20R4D%20Script'))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = "سكربت شفت",
   Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Sector9922/SECTOR-SHIFT-LOCK/main/SECTOR%20SHIFT%20LOCK"))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = "سكربت زاكيوس",
   Callback = function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-M7MD-HUB-27414"))()
   end
 })
  
-AddButton(Main, {
+Sc:AddButton({
   Name = "سكربت Sky",
   Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/SkyHub.txt"))()
   end
 })
  
-local Main = MakeTab({Name = " ⚜الاسماء⚜"})
-AddButton(Main, {
+local Ns = Window:MakeTab({Name = " ⚜الاسماء⚜", Icon = "rbxassetid://10723395457"})
+
+Ns:AddButton({
   Name = "اسم كـَلب🩷",
   Callback = function()
     local args = {
@@ -1050,7 +1026,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServer(unpack(args))
   end
 })
-AddButton(Main, {
+Ns:AddButton({
   Name = "اسم M طويل",
   Callback = function()
     local args = {
@@ -1062,7 +1038,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServ
  
 end
 })
-AddButton(Main, {
+Ns:AddButton({
   Name = "اسم هاك",
   Callback = function()
     local args = {
@@ -1074,7 +1050,7 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServ
  
   end
 })
-AddButton(Main, {
+Ns:AddButton({
   Name = "اسم ادمن ",
   Callback = function()
     local args = {
@@ -1086,37 +1062,37 @@ game:GetService("ReplicatedStorage").RE:FindFirstChild("1RPNam1eTex1t"):FireServ
  
   end
 })
-local Main = MakeTab({Name = "⚜قائمة القتل او الحماية⚜"})
- 
-local Paragraph = AddParagraph(Main, {" سكربتات القتل او الحماية"})
- AddButton(Main, {
+local kil = Window:MakeTab({Name = "⚜قائمة القتل او الحماية⚜", Icon = "rbxassetid://10723395457"})
+kil:AddSection({" سكربتات القتل او الحماية"})
+ kil:AddButton({
   Name = "رحمه",
   Callback = function()
  loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
   end
 })
-AddButton(Main, {
+kil:AddButton({
   Name = "سكربت يقتل الناس بالكنبة",
   Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
   end
 })
  
-AddButton(Main, {
+kil:AddButton({
   Name = "سكربت يطير او يقتل اي احد يريد يطيرك",
   Callback = function()
 loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-FE-Fling-GUI-10927"))()
   end
 })
  
-AddButton(Main, {
+kil:AddButton({
   Name = "سكربت محد يكدر يطيرك",
   Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/ignore-touchinterests/main/main",true))() 
   end
 })
-local Main = MakeTab({Name = "⚜اللاعب⚜"})
-AddTextBox(Main, {
+local pl = Window:MakeTab({Name = "⚜اللاعب⚜", Icon = "rbxassetid://17781992617"})
+
+pl:AddTextBox( {
   Name = "السرعة",
   Default = "",
   PlaceholderText = "ادخل الرقم",
@@ -1125,7 +1101,7 @@ AddTextBox(Main, {
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value     
  end
 })
-AddTextBox(Main, {
+pl:AddTextBox({
   Name = "القفزة",
   Default = "",
   PlaceholderText = "ادخل الرقم",
@@ -1134,7 +1110,7 @@ AddTextBox(Main, {
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = value    
   end
 })
-AddTextBox(Main, {
+pl:AddTextBox({
   Name = "بعد الشاشة",
   Default = "",
   PlaceholderText = "ادخل الرقم",
@@ -1145,7 +1121,7 @@ local Camera = workspace.CurrentCamera
 Camera.FieldOfView = FovNumber  
   end
 })
-AddTextBox(Main, {
+pl:AddTextBox({
   Name = "الدوران",
   Default = "",
   PlaceholderText = "ادخل الرقم",
@@ -1161,7 +1137,7 @@ wait(0.1)
 Spin.AngularVelocity = Vector3.new(100,Spinspeed,0)
   end
 })
-AddButton(Main, {
+kil:AddButton({
   Name = "الكنبة",
   Callback = function()
     local args={[1]="PickingTools",[2]="Couch"};game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
@@ -1193,7 +1169,7 @@ infiniteJumpEnabled = value
 end
  
 -- Adiciona o botão de alternância "Infinitejump"
-local Toggle = AddToggle(Main, {
+kil:AddToggle({
     Name = "قفزات لانهائية",
     Default = false,
     Callback = onInfiniteJumpToggle
@@ -1265,7 +1241,7 @@ local function findPlayerByPartialNameOrNickname(partialName)
 end
  
 -- Adicionando a caixa de texto para entrada do nome ou apelido do jogador
-AddTextBox(Main, {
+kil:AddTextBox({
     Name = "ادخال اول 3 أحرفمن اسم الشخص",
  
 Default = "",
@@ -1306,7 +1282,7 @@ print("Jogador encontrado: " .. selectedViewPlayer.Name)
 })
  
 -- Adicionando o toggle para ativar/desativar a visualização
-AddToggle(Main, {
+kil:AddToggle({
     Name = "شاهده",
     Default = false,
     Callback = function(enabled)
@@ -1341,7 +1317,60 @@ local function maintainView()
         end
     end
 end
-AddButton(Main, {
+
+
+kil:AddSection({"نسخ اسكنات"})
+local AvatarPlayerDropDown = kil:AddDropdown({
+  Name = "اختار اللاعب",
+  Options = {},
+  Default = {"nil"}
+  MultSelect = false,
+  Flag = "avatar players",
+  Callback = function(Value)
+    PlayerAvatar = Value
+  end
+})
+
+--[[
+  Dropdown:Set({New Options}, Void)
+  -- Example : {
+    Dropdown:Set({"one", "two", "three"}, true)
+  }
+  
+  Dropdown:Callback(function(Value)
+    
+  end)
+]]
+
+function UpdatePlayers()
+  local playerNames = {}
+  for _, player in ipairs(game.Players:GetPlayers()) do
+    table.insert(playerNames, player.Name)
+  end
+  AvatarPlayerDropDown:Set(playerNames)
+end
+
+UpdatePlayers()
+
+game.Players.PlayerAdded:Connect(UpdatePlayers)
+game.Players.PlayerRemoving:Connect(UpdatePlayers)
+
+
+
+kil:AddButton({
+  Name = "نسخ",
+  Callback = function()
+    RaelHubBrookHaven.CopyPlayerSkin(PlayerAvatar)
+  end
+})
+
+
+
+
+
+
+
+kil:AddButton({
   Name = "اختفاء اللاعب",
   Callback = function()
     local args = {
@@ -1351,7 +1380,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Clothe1s"):FireServer(unpack(args))
   end
 })
-AddButton(Main, {
+kil:AddButton({
   Name = "إلغاء الاختفاء",
   Callback = function()
     local args = {
@@ -1402,32 +1431,32 @@ local function onNoclipToggle(value)
 end
  
 -- Adiciona o botão de alternância "Noclip"
-local Toggle = AddToggle(Main, {
+kil:AddToggle({
     Name = " اختراق الجدار",
  
 Default = false,
     Callback = onNoclipToggle
 })
-AddButton(Main, {
+kil:AddButton({
   Name = "الطيران ",
   Callback = function()
   loadstring(game:HttpGet("https://raw.githubusercontent.com/IAMHIM9183/OO/refs/heads/main/fly"))()
   end
 })
-AddButton(Main, {
+kil:AddButton({
 Name = "قفل الشاشة",
 Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Luarmor123/community-Y-HUB/refs/heads/main/Shiftlock"))()
   end
 })
-local Paragraph = AddParagraph(Main, {"⚜️تفيدك ذني السوالف⚜️"})
-AddButton(Main, {
+kil:AddSection({"⚜️تفيدك ذني السوالف⚜️"})
+kil:AddButton({
   Name = " اعاده دخول الى سيرفر",
   Callback = function()
     loadstring(game:HttpGet("https://pastebin.com/raw/j2ex7NdF"))()
   end
 })
-AddButton(Main, {
+kil:AddButton({
   Name = "احذف جميع الأشياء الي بـ ايدك",
   Callback = function()
     local args = {
@@ -1437,7 +1466,7 @@ AddButton(Main, {
 game:GetService("ReplicatedStorage").RE:FindFirstChild("1Clea1rTool1s"):FireServer(unpack(args))
   end
 })
-AddButton(Main, {
+kil:AddButton({
   Name = "اقتل نفسك",
   Callback = function()
     game.Players.LocalPlayer.Character.Humanoid.Health = 0
