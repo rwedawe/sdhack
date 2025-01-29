@@ -1000,7 +1000,7 @@ AddButton(Main, {
 AddButton(Main, {
   Name = " سكربت طيران  ",
   Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/AshleyCanis/-/main/%D8%B7%D9%8A%D8%B1%D8%A7%D9%86%20%D8%B5%D9%86%D8%B9%20%D8%A2%D8%B4%D9%84%D9%8A%20%D9%83%D8%A7%D9%86%D9%8A%D8%B3"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/rwedawe/RC7fly/refs/heads/main/FLy.txt"))()
   end
 })
  
