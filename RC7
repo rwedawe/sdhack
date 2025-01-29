@@ -931,6 +931,24 @@ Name = "مكان المودلة",
 })
 local Main = MakeTab({Name = "⚜️السكربتات⚜️"})
 AddButton(Main, {
+  Name = "سكربت ازاله الملابس",
+  Callback = function()
+   local player = game.Players.LocalPlayer -- تحديد اللاعب
+local character = player.Character or player.CharacterAdded:Wait() -- الحصول على شخصية اللاعب
+
+-- إزالة القميص
+if character:FindFirstChild("Shirt") then
+    character.Shirt:Destroy()
+end
+
+-- إزالة السروال
+if character:FindFirstChild("Pants") then
+    character.Pants:Destroy()
+end
+
+  end
+})
+AddButton(Main, {
   Name = "سكربت الجودة",
   Callback = function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Rtx-graphics-25102"))()
